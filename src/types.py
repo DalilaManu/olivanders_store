@@ -24,3 +24,16 @@ class Ollivander:
             item.updateQuality()
             print(item.toString())   
 
+class Item:
+     def __init__(self, name, sellIn, quality):
+        self.name = name
+        self.sellIn = sellIn
+        self.quality = quality
+
+     @property
+     def quality(self):
+        return self._quality
+
+     @quality.setter
+     def quality(self, quality):
+        self._quality = max(0, min(50, quality))
