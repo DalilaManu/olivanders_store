@@ -64,3 +64,12 @@ class NormalItem(Interfaz, Item):
         
     def toString(self):
         return f'name= {self.name}, sell_in= {self.sellIn}, quality= {self.quality}'
+    
+
+class AgedBrie(NormalItem):
+    def updateQuality(self):
+        self.setSellIn()
+        if self.sellIn > 0:
+            self.setQuality(-1)
+        else:
+            self.setQuality(-2)
